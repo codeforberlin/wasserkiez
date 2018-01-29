@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,width=device-width">
+        <title>Wasserkiez</title>
+
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!-- handlebars -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+
+        <!-- awesome-markers -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" integrity="sha256-EFpFyBbuttUJtoocYzsBnERPWee2JYz4cn5nkUBjW0A=" crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="style.css" />
+
+        <script id="refill-template" type="text/x-handlebars-template">
+            <h4>{{name}}</h4>
+            <div class="body">
+                <div>{{street}}</div>
+                <div>{{zip}} {{city}}</div>
+                <div><a href="{{url}}">{{url}}</a></div>
+                <div>{{open}}</div>
+            </div>
+        </script>
+
+        <script id="testimonial-template" type="text/x-handlebars-template">
+            <h4>{{name}}</h4>
+            <div class="body">
+                <div>{{street}}</div>
+                <div>{{zip}} {{city}}</div>
+                <div><a href="{{url}}">{{url}}</a></div>
+                <div>{{open}}</div>
+            </div>
+        </script>
+
+        <script id="test-template" type="text/x-handlebars-template">
+            <h4>{{name}}</h4>
+            <div class="body">
+                <div>{{street}}</div>
+                <div>{{zip}} {{city}}</div>
+                <div><a href="{{url}}">{{url}}</a></div>
+                <div>{{open}}</div>
+            </div>
+        </script>
+
+        <script src="app.js" ></script>
+    </head>
+    <body>
+        <div class="map" id="map"></div>
+    </body>
+</html>
