@@ -12,7 +12,7 @@ var opt = {
         center: [52.5036411,13.4265875], // Germany
         zoom: 15
     }
-}
+};
 
 $(document).ready(function() {
     map = L.map('map', {
@@ -30,15 +30,42 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'locations.json',
+        url: 'https://api.airtable.com/v0/appM01mYlIJUkU1Od/Refill',
+        headers: {
+            'Authorization': 'Bearer keyl5v0iA9uirvIAH'
+        },
         success: function(response) {
-            L.geoJSON(response, {
+            var geojson = {
+                type: 'FeatureCollection',
+                features: []
+            };
+
+            $.each(response.records, function(index, record) {
+                var feature = {
+                    type: 'Feature',
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [
+                            record.fields['Längengrad'],
+                            record.fields['Breitengrad']
+                        ]
+                    },
+                    properties: {
+                        type: 'refill',
+                        name: record.fields['name']
+                    }
+                }
+
+                geojson.features.push(feature)
+            });
+
+            L.geoJSON(geojson, {
                 style: function(feature) {
                     if (feature.properties.type == 'border') {
                         return {
-                            'color': "#ff0000",
-                            'weight': 20,
-                            'opacity': 0.3,
+                            'color': "#aa0000",
+                            'weight': 10,
+                            'opacity': .5,
                             'fill': null
                         };
                     } else {
