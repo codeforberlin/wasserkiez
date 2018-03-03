@@ -21,32 +21,28 @@
         <link rel="stylesheet" href="style.css" />
 
         <script id="refill-template" type="text/x-handlebars-template">
-            <h4>{{name}}</h4>
+            <h4>{{ Name }}</h4>
             <div class="body">
-                <div>{{street}}</div>
-                <div>{{zip}} {{city}}</div>
-                <div><a href="{{url}}">{{url}}</a></div>
-                <div>{{open}}</div>
+                <div>{{ Straße }} {{ Hausnummer }}</div>
+                <div>{{ PLZ }} {{ Stadt }}</div>
+                <div><a href="{{ URL }}">{{ URL }}</a></div>
+                {{#if Öffnungszeiten}}
+                <div>Geöffnet: {{ Öffnungszeiten }}</div>
+                {{/if}}
             </div>
         </script>
 
         <script id="testimonial-template" type="text/x-handlebars-template">
-            <h4>{{name}}</h4>
+            <h4>{{ Name }}</h4>
             <div class="body">
-                <div>{{street}}</div>
-                <div>{{zip}} {{city}}</div>
-                <div><a href="{{url}}">{{url}}</a></div>
-                <div>{{open}}</div>
+                <div>{{ Zitat }}</div>
             </div>
         </script>
 
         <script id="test-template" type="text/x-handlebars-template">
-            <h4>{{name}}</h4>
+            <h4>{{ Name }}</h4>
             <div class="body">
-                <div>{{street}}</div>
-                <div>{{zip}} {{city}}</div>
-                <div><a href="{{url}}">{{url}}</a></div>
-                <div>{{open}}</div>
+                <div>{{ Messwert }}</div>
             </div>
         </script>
 
