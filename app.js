@@ -26,9 +26,24 @@ var opt = {
 };
 
 var icons = {
-    'Refill': new L.Icon($.extend({iconUrl: 'img/marker-icon-blue.png'}, opt.icon)),
-    'Testimonial': new L.Icon($.extend({iconUrl: 'img/marker-icon-green.png'}, opt.icon)),
-    'Test': new L.Icon($.extend({iconUrl: 'img/marker-icon-violet.png'}, opt.icon))
+    'Refill': new L.Icon({
+        iconUrl: 'img/refill.png',
+        iconSize: [25, 48],
+        iconAnchor: [13, 46],    // 0,0 is the top left corner
+        popupAnchor: [0, -50],   // as seen from iconAnchor
+    }),
+    'Testimonial': new L.Icon({
+        iconUrl: 'img/testimonial.png',
+        iconSize: [25, 60],
+        iconAnchor: [12, 58],    // 0,0 is the top left corner
+        popupAnchor: [0, -60],   // as seen from iconAnchor
+    }),
+    'Test': new L.Icon({
+        iconUrl: 'img/test.png',
+        iconSize: [34, 40],
+        iconAnchor: [27, 38],    // 0,0 is the top left corner
+        popupAnchor: [-12, -40], // as seen from iconAnchor
+    })
 };
 
 $(document).ready(function() {
