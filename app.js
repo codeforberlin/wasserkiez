@@ -62,13 +62,13 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'border.json',
+        url: 'Border.json',
         success: function(geojson) {
             L.geoJSON(geojson, {
                 style: {
-                    'color': "#aa0000",
-                    'weight': 10,
-                    'opacity': .5,
+                    'color': "#009fe3",
+                    'weight': 5,
+                    'opacity': .75,
                     'fill': null
                 }
             }).addTo(map);
