@@ -62,7 +62,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'Border.json',
+        url: 'border.json',
         success: function(geojson) {
             L.geoJSON(geojson, {
                 style: {
