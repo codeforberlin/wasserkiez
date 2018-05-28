@@ -12,7 +12,7 @@
         <script src="lib/handlebars.min.js"></script>
         <script src="lib/leaflet.js"></script>
 
-        <script id="refill-template" type="text/x-handlebars-template">
+                <script id="refill-template" type="text/x-handlebars-template">
             <h4>{{ Name }}</h4>
             <div class="body">
                 <div>{{ Straße }} {{ Hausnummer }}</div>
@@ -36,6 +36,62 @@
             <h4>{{ Name }}</h4>
             <div class="body">
                 <div>{{ Messwert }}</div>
+
+                {{#if [Coliforme Bakterien] }}
+                <p>Coliforme Bakterien</p>
+                <div class="scale">
+                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="measurement" style="left: 12%;"></div>
+                </div>
+                {{/if}}
+
+                {{#if [Escheria Coli] }}
+                <p>Escheria Coli</p>
+                <div class="scale">
+                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="measurement" style="left: 12%;"></div>
+                </div>
+                {{/if}}
+
+                {{#if Blei }}
+                <p>Blei: {{ Blei }} ug / l</p>
+                <div class="scale">
+                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="measurement" style="left: 12%;"></div>
+                </div>
+                {{/if}}
+
+                {{#if Kupfer }}
+                <p>Kupfer</p>
+                <div class="scale">
+                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="measurement" style="left: 43%;"></div>
+                </div>
+                {{/if}}
+
+                {{#if Nickel }}
+                <p>Nickel</p>
+                <div class="scale">
+                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="measurement" style="left: 76%;"></div>
+                </div>
+                {{/if}}
+
+                {{#if Natrium }}
+                <p>Natrium</p>
+                <div class="scale">
+                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="measurement" style="left: 80%;"></div>
+                </div>
+                {{/if}}
+
+                {{#if Härtebereich}}
+                <p>Härtebereich: {{ Härtebereich }}</p>
+                {{/if}}
+
+                {{#if Anmerkung}}
+                <p>{{ Anmerkung }}</p>
+                {{/if}}
             </div>
         </script>
 

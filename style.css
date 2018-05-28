@@ -17,3 +17,26 @@ html, body {
 .leaflet-popup-content img {
     width: 100%;
 }
+.scale {
+    position: relative;
+
+    width: 200px;
+    height: 20px;
+    margin-bottom: 10px;
+    background: linear-gradient(-90deg, red, green);
+
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.threshold,
+.measurement {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+}
+.threshold {
+    background-color: black;
+}
+.measurement {
+    background-color: white;
+}
