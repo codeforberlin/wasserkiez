@@ -41,7 +41,7 @@
                 <p>Coliforme Bakterien</p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
-                    <div class="measurement" style="left: 12%;"></div>
+                    <div class="measurement" style="left: {{ [Coliforme Bakterien_Percentage] }}%;"></div>
                 </div>
                 {{/if}}
 
@@ -49,7 +49,7 @@
                 <p>Escheria Coli</p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
-                    <div class="measurement" style="left: 12%;"></div>
+		    <div class="measurement" style="left: {{ [Escheria Coli_Percentage] }}%;"></div>
                 </div>
                 {{/if}}
 
@@ -57,7 +57,7 @@
                 <p>Blei: {{ Blei }} ug / l</p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
-                    <div class="measurement" style="left: 12%;"></div>
+                    <div class="measurement" style="left: {{ Blei_Percentage }}%;"></div>
                 </div>
                 {{/if}}
 
@@ -65,7 +65,7 @@
                 <p>Kupfer</p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
-                    <div class="measurement" style="left: 43%;"></div>
+                    <div class="measurement" style="left: {{ Kupfer_Percentage }}%;"></div>
                 </div>
                 {{/if}}
 
@@ -73,7 +73,7 @@
                 <p>Nickel</p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
-                    <div class="measurement" style="left: 76%;"></div>
+                    <div class="measurement" style="left: {{ Nickel_Percentage }}%;"></div>
                 </div>
                 {{/if}}
 
@@ -81,7 +81,7 @@
                 <p>Natrium</p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
-                    <div class="measurement" style="left: 80%;"></div>
+                    <div class="measurement" style="left: {{ Natrium_Percentage }}%;"></div>
                 </div>
                 {{/if}}
 
