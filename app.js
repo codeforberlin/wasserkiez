@@ -46,6 +46,23 @@ var icons = {
     })
 };
 
+function calculatePercentage(properties, key){
+    var t = properties[key + " Grenzwert"];
+    var r = properties[key + " Spanne"];
+    var m = properties[key];
+    
+    var o = {};
+    o[key + "_Percentage"] = ((r-t+m) / (2 * r)) * 100;
+    return o;
+}
+
+function collectPercentages(properties){
+    var keys = ["Coliforme Bakterien","Escheria coli", "Kupfer", "Nickel", "Natrium"];
+    return keys.reduce(function(agg, key) {
+        return Object.assign(agg, calculatePercentage(properties, key));
+    });
+}
+
 $(document).ready(function() {
     var templates = {
         'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
@@ -85,7 +102,10 @@ $(document).ready(function() {
             success: function(response) {
                 L.geoJSON(to_geojson(response), {
                     pointToLayer: function(feature, latlng) {
-                        var popup = templates[value](feature.properties);
+                        var percentages = collectPercentages(feature.properties);
+                        var properties = Object.assign(feature.properties, percentages);
+                        
+                        var popup = templates[value](properties);
 
                         var options = {};
 
