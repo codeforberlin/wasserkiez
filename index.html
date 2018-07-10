@@ -38,7 +38,7 @@
                 <div>{{ Messwert }}</div>
 
                 {{#if [Coliforme Bakterien] }}
-                <p>Coliforme Bakterien</p>
+                <p>Coliforme Bakterien: {{ [Coliforme Bakterien] }} / 100ml</p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
                     <div class="measurement" style="left: {{ [Coliforme Bakterien_Percentage] }}%;"></div>
@@ -46,7 +46,7 @@
                 {{/if}}
 
                 {{#if [Escheria Coli] }}
-                <p>Escheria Coli</p>
+                <p>Escheria Coli: {{ [Escheria Coli] }} / 100ml </p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
 		    <div class="measurement" style="left: {{ [Escheria Coli_Percentage] }}%;"></div>
@@ -62,7 +62,7 @@
                 {{/if}}
 
                 {{#if Kupfer }}
-                <p>Kupfer</p>
+                <p>Kupfer: {{ Kupfer }} ug / l </p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
                     <div class="measurement" style="left: {{ Kupfer_Percentage }}%;"></div>
@@ -70,7 +70,7 @@
                 {{/if}}
 
                 {{#if Nickel }}
-                <p>Nickel</p>
+                <p>Nickel: {{ Nickel }} ug / l </p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
                     <div class="measurement" style="left: {{ Nickel_Percentage }}%;"></div>
@@ -78,7 +78,7 @@
                 {{/if}}
 
                 {{#if Natrium }}
-                <p>Natrium</p>
+                <p>Natrium: {{ Natrium }} mg / l (Wasserwerk) </p>
                 <div class="scale">
                     <div class="threshold" style="left: 50%;"></div>
                     <div class="measurement" style="left: {{ Natrium_Percentage }}%;"></div>
