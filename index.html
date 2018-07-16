@@ -37,50 +37,50 @@
             <div class="body">
                 <div>{{ Messwert }}</div>
 
-                {{#if [Coliforme Bakterien] }}
-                <p>Coliforme Bakterien</p>
+                {{#if [Coliforme Bakterien] includeZero=true }}
+                <p>Coliforme Bakterien: {{ [Coliforme Bakterien] }} / 100ml</p>
                 <div class="scale">
-                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="threshold" style="left: {{ [Coliforme Bakterien_Grenzwert_Percentage] }}%;"></div>
                     <div class="measurement" style="left: {{ [Coliforme Bakterien_Percentage] }}%;"></div>
                 </div>
                 {{/if}}
 
-                {{#if [Escheria Coli] }}
-                <p>Escheria Coli</p>
+                {{#if [Escheria Coli] includeZero=true }}
+                <p>Escheria Coli: {{ [Escheria Coli] }} / 100ml </p>
                 <div class="scale">
-                    <div class="threshold" style="left: 50%;"></div>
-		    <div class="measurement" style="left: {{ [Escheria Coli_Percentage] }}%;"></div>
+                    <div class="threshold" style="left: {{ [Escheria Coli_Grenzwert_Percentage] }}%;"></div>
+         		    <div class="measurement" style="left: {{ [Escheria Coli_Percentage] }}%;"></div>
                 </div>
                 {{/if}}
 
-                {{#if Blei }}
+                {{#if Blei includeZero=true }}
                 <p>Blei: {{ Blei }} ug / l</p>
                 <div class="scale">
-                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="threshold" style="left: {{ Blei_Grenzwert_Percentage }}%;"></div>
                     <div class="measurement" style="left: {{ Blei_Percentage }}%;"></div>
                 </div>
                 {{/if}}
 
-                {{#if Kupfer }}
-                <p>Kupfer</p>
+                {{#if Kupfer includeZero=true }}
+                <p>Kupfer: {{ Kupfer }} ug / l </p>
                 <div class="scale">
-                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="threshold" style="left: {{ Kupfer_Grenzwert_Percentage }}%;"></div>
                     <div class="measurement" style="left: {{ Kupfer_Percentage }}%;"></div>
                 </div>
                 {{/if}}
 
-                {{#if Nickel }}
-                <p>Nickel</p>
+                {{#if Nickel includeZero=true}}
+                <p>Nickel: {{ Nickel }} ug / l </p>
                 <div class="scale">
-                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="threshold" style="left: {{ Nickel_Grenzwert_Percentage }}%;"></div>
                     <div class="measurement" style="left: {{ Nickel_Percentage }}%;"></div>
                 </div>
                 {{/if}}
 
-                {{#if Natrium }}
-                <p>Natrium</p>
+                {{#if Natrium includeZero=true }}
+                <p>Natrium: {{ Natrium }} mg / l (Wasserwerk) </p>
                 <div class="scale">
-                    <div class="threshold" style="left: 50%;"></div>
+                    <div class="threshold" style="left: {{ Natrium_Grenzwert_Percentage }}%;"></div>
                     <div class="measurement" style="left: {{ Natrium_Percentage }}%;"></div>
                 </div>
                 {{/if}}

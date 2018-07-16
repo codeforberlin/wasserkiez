@@ -46,21 +46,27 @@ var icons = {
     })
 };
 
-function calculatePercentage(properties, key){
-    var t = properties[key + " Grenzwert"];
-    var r = properties[key + " Spanne"];
-    var m = properties[key];
-    
+function calculatePercentage(properties, key, limit){
+    var max = properties[key + " Maximum"];
+    var value = properties[key];
+    if (limit){
+      value = properties[key + " Grenzwert"];
+    }
+
     var o = {};
-    o[key + "_Percentage"] = ((r-t+m) / (2 * r)) * 100;
+    var prefix = limit ? "_Grenzwert" : "";
+    o[key + prefix + "_Percentage"] =  value/max* 100;
     return o;
 }
 
 function collectPercentages(properties){
-    var keys = ["Coliforme Bakterien","Escheria coli", "Kupfer", "Nickel", "Natrium"];
+    var keys = ["Coliforme Bakterien","Escheria Coli", "Kupfer", "Nickel", "Natrium"];
     return keys.reduce(function(agg, key) {
-        return Object.assign(agg, calculatePercentage(properties, key));
-    });
+        return Object.assign(agg,
+          calculatePercentage(properties, key, true),
+          calculatePercentage(properties, key, false),
+          );
+    }, {});
 }
 
 $(document).ready(function() {
@@ -104,10 +110,8 @@ $(document).ready(function() {
                     pointToLayer: function(feature, latlng) {
                         var percentages = collectPercentages(feature.properties);
                         var properties = Object.assign(feature.properties, percentages);
-                        
-                        var popup = templates[value](properties);
 
-                        var options = {};
+                        var popup = templates[value](properties);
 
                         marker = L.marker(latlng, {icon: icons[value]});
                         marker.bindPopup(popup);
