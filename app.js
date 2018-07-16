@@ -55,7 +55,7 @@ function calculatePercentage(properties, key, limit){
 
     var o = {};
     var prefix = limit ? "_Grenzwert" : "";
-    o[key + prefix + "_Percentage"] =  value/max* 100;
+    o[key + prefix + "_Percentage"] = Math.min(value / max * 100, 98);
     return o;
 }
 
