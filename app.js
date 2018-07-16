@@ -60,7 +60,7 @@ function calculatePercentage(properties, key, limit){
 }
 
 function collectPercentages(properties){
-    var keys = ["Coliforme Bakterien","Escheria Coli", "Kupfer", "Nickel", "Natrium"];
+    var keys = ["Coliforme Bakterien", "Escheria Coli", "Blei", "Kupfer", "Nickel", "Natrium"];
     return keys.reduce(function(agg, key) {
         return Object.assign(agg,
           calculatePercentage(properties, key, true),

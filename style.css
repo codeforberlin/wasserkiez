@@ -23,20 +23,20 @@ html, body {
     width: 200px;
     height: 20px;
     margin-bottom: 10px;
-    background: linear-gradient(-90deg, red, green);
-
-    padding-top: 1px;
-    padding-bottom: 1px;
+    background: linear-gradient(90deg, #009EE8, #009EE8, red);
 }
 .threshold,
 .measurement {
     position: absolute;
-    width: 2px;
     height: 100%;
 }
 .threshold {
-    background-color: black;
+    background-color: white;
+    width: 2px;
 }
 .measurement {
-    background-color: #a1c5ff;
+    background-color: black;
+    width: 2px;
+    height: 24px;
+    margin-top: -2px;
 }
