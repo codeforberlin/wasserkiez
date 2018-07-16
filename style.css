@@ -20,6 +20,9 @@ html, body {
 .img-wrapper {
     text-align: center;
 }
+.img-wrapper.img-testimonial img {
+    border-radius: 50%;
+}
 .img-wrapper img {
     max-width: 100%;
 }

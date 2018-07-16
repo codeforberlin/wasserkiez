@@ -90,7 +90,7 @@ $(document).ready(function() {
             L.geoJSON(geojson, {
                 style: {
                     'color': "#009fe3",
-                    'weight': 5,
+                    'weight': 12,
                     'opacity': .75,
                     'fill': null
                 }
