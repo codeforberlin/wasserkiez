@@ -1,9 +1,5 @@
 (function () {
-
     var map, data, markers = [];
-
-    var airtable_url = 'https://api.airtable.com/v0/appM01mYlIJUkU1Od/',
-        airtable_key = 'keyl5v0iA9uirvIAH';
 
     var opt = {
         map: {
@@ -14,10 +10,6 @@
                 'maxZoom': 18
             }
         },
-        location: {
-            center: [52.5036411,13.4265875],
-            zoom: 15
-        },
         icon: {
             shadowUrl: 'img/marker-shadow.png',
             iconSize: [25, 41],
@@ -26,6 +18,23 @@
             shadowSize: [41, 41]
         }
     };
+
+    var hoods = {
+        berlin: {
+            airtable_url: 'https://api.airtable.com/v0/appM01mYlIJUkU1Od/',
+            airtable_key: 'keyl5v0iA9uirvIAH',
+            border: 'border/berlin.json',
+            center: [52.5036411,13.4265875],
+            zoom: 15
+        },
+        karlsruhe: {
+            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_key: 'keyl5v0iA9uirvIAH',
+            border: 'border/karlsruhe.json',
+            center: [49.014, 8.4043],
+            zoom: 15
+        }
+    }
 
     var icons = {
         'Refill': new L.Icon({
@@ -49,6 +58,9 @@
     };
 
     function init() {
+        var hoodname = location.hash.replace('#', '');
+        var hood = hoods[hoodname] || hoods['berlin'];
+
         var templates = {
             'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
             'Testimonial': Handlebars.compile(document.getElementById('testimonial-template').innerHTML),
@@ -60,9 +72,9 @@
         });
 
         L.tileLayer(opt.map.url, opt.map.options).addTo(map);
-        map.setView(opt.location.center, opt.location.zoom);
+        map.setView(hood.center, hood.zoom);
 
-        fetchBorders().then(function(response) {
+        fetchBorders(hood).then(function(response) {
             L.geoJSON(response, {
                 style: {
                     'color': "#009fe3",
@@ -75,7 +87,7 @@
 
         ['Refill', 'Testimonial', 'Test'].forEach(function(category) {
 
-            fetchPoints(category).then(function(response) {
+            fetchPoints(hood, category).then(function(response) {
                 L.geoJSON(toGeojson(response), {
                     pointToLayer: function(feature, latlng) {
                         var percentages = collectPercentages(feature.properties);
@@ -93,16 +105,16 @@
         });
     }
 
-    function fetchBorders() {
-        return fetch('border.json').then(function(response) {
+    function fetchBorders(hood) {
+        return fetch(hood.border).then(function(response) {
             return response.json();
         });
     }
 
-    function fetchPoints(category) {
-        return fetch(airtable_url + category, {
+    function fetchPoints(hood, category) {
+        return fetch(hood.airtable_url + category, {
             headers: {
-                'Authorization': 'Bearer ' + airtable_key
+                'Authorization': 'Bearer ' + hood.airtable_key
             }
         }).then(function(response) {
             return response.json();
