@@ -28,84 +28,84 @@
             zoom: 15
         },
         herrsching: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appjvYr3or0V0F44E/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/herrsching.json',
             center: [47.99846, 11.17039],
             zoom: 15
         },
         moabit: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appTquB8z94iWshhQ/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/moabit.json',
             center: [50.83254, 12.92530],
             zoom: 15
         },
         chemnitz: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appsCp3RA4MFKtth3/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/chemnitz.json',
             center: [49.014, 8.4043],
             zoom: 15
         },
         erfurt: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appeNrxLHEvyx8anc/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/erfurt.json',
             center: [50.97807, 11.02874],
             zoom: 15
         },
         gelsenkirchen: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appvWG5FMy9MYxWlM/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/gelsenkirchen.json',
             center: [51.55626, 7.06991],
             zoom: 15
         },
         karlsruhe: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appggpdHx1FsNj3Fd/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/karlsruhe.json',
             center: [49.014, 8.4043],
             zoom: 15
         },
         labertal: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/apprmiLzrLvlOnKmx/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/labertal.json',
             center: [48.72033, 12.04024],
             zoom: 15
         },
         peine: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/app14Pi8kZdokmSVR/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/peine.json',
             center: [52.31633, 10.23303],
             zoom: 15
         },
         marburg: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appt1VwCeE69OXvSa/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/marburg.json',
             center: [50.79853, 8.74277],
             zoom: 15
         },
         styrum: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appXkv0JETUNqN0Mf/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/styrum.json',
             center: [51.44816,6.85250],
             zoom: 15
         },
         neuruppin: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appGrVY6Yhq0RcBPR/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/neuruppin.json',
             center: [52.94608, 12.82280],
             zoom: 15
         },
         verden: {
-            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
+            airtable_url: 'https://api.airtable.com/v0/appxsSpCN12iGCIxd/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/verden.json',
             center: [52.92275, 9.23541],
