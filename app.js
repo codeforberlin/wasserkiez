@@ -63,7 +63,7 @@
             zoom: 15
         },
         karlsruhe: {
-            airtable_url: 'https://api.airtable.com/v0/appggpdHx1FsNj3Fd/',
+            airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/karlsruhe.json',
             center: [49.014, 8.4043],
