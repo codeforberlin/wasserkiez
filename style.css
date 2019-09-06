@@ -10,7 +10,7 @@ html, body {
     left: 0;
 }
 .leaflet-popup-content {
-    width: 200px;
+    min-width: 200px;
 }
 .leaflet-popup-content h4,
 .leaflet-popup-content p {
@@ -18,13 +18,15 @@ html, body {
     margin-bottom: 5px;
 }
 .img-wrapper {
-    text-align: center;
+    margin-bottom: 10px;
 }
 .img-wrapper.img-testimonial img {
     border-radius: 50%;
 }
 .img-wrapper img {
-    max-width: 100%;
+    display: block;
+    margin: auto;
+    max-width: 200px;
 }
 .scale {
     position: relative;
