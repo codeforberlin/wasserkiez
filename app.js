@@ -74,7 +74,7 @@
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/labertal.json',
             center: [48.72033, 12.04024],
-            zoom: 15
+            zoom: 11
         },
         peine: {
             airtable_url: 'https://api.airtable.com/v0/app14Pi8kZdokmSVR/',
