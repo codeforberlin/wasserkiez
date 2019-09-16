@@ -134,6 +134,14 @@
         })
     };
 
+    function addAllHoods(){
+        Object.entries(hoods).forEach(([key ,value]) => {
+            L.marker(value.center)
+             .bindPopup(`<a href='#${key}'> Nach ${key} wechseln </a>`)
+             .addTo(map);
+        });
+    }
+
     function init() {
         var hoodname = location.hash.replace('#', '');
         var hood = hoods[hoodname] || hoods['berlin'];
@@ -151,6 +159,8 @@
 
         L.tileLayer(opt.map.url, opt.map.options).addTo(map);
         map.setView(hood.center, hood.zoom);
+
+        addAllHoods();
 
         fetchBorders(hood).then(function(response) {
             L.geoJSON(response, {
