@@ -38,8 +38,8 @@
             airtable_url: 'https://api.airtable.com/v0/appTquB8z94iWshhQ/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/moabit.json',
-            center: [50.83254, 12.92530],
-            zoom: 15
+            center: [52.52885898000442, 13.34341049194336],
+            zoom: 14
         },
         chemnitz: {
             airtable_url: 'https://api.airtable.com/v0/appsCp3RA4MFKtth3/',
@@ -87,15 +87,15 @@
             airtable_url: 'https://api.airtable.com/v0/appt1VwCeE69OXvSa/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/marburg.json',
-            center: [50.79853, 8.74277],
+            center: [50.814666650503554, 8.773441314697266,],
             zoom: 15
         },
-        styrum: {
+        muehlheim: {
             airtable_url: 'https://api.airtable.com/v0/appXkv0JETUNqN0Mf/',
             airtable_key: 'keyl5v0iA9uirvIAH',
-            border: 'border/styrum.json',
-            center: [51.44816,6.85250],
-            zoom: 15
+            border: 'border/muehlheim.json',
+            center: [51.446625415999826, 6.853923797607422],
+            zoom: 14
         },
         neuruppin: {
             airtable_url: 'https://api.airtable.com/v0/appGrVY6Yhq0RcBPR/',
@@ -137,6 +137,7 @@
     function init() {
         var hoodname = location.hash.replace('#', '');
         var hood = hoods[hoodname] || hoods['berlin'];
+
 
         var templates = {
             'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
