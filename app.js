@@ -45,8 +45,8 @@
             airtable_url: 'https://api.airtable.com/v0/appsCp3RA4MFKtth3/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/chemnitz.json',
-            center: [49.014, 8.4043],
-            zoom: 15
+            center: [50.8400, 12.9188],
+            zoom: 14
         },
         erfurt: {
             airtable_url: 'https://api.airtable.com/v0/appeNrxLHEvyx8anc/',
@@ -59,8 +59,8 @@
             airtable_url: 'https://api.airtable.com/v0/appvWG5FMy9MYxWlM/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/gelsenkirchen.json',
-            center: [51.55626, 7.06991],
-            zoom: 15
+            center: [51.5010, 7.1147],
+            zoom: 14
         },
         karlsruhe: {
             airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
@@ -80,8 +80,8 @@
             airtable_url: 'https://api.airtable.com/v0/app14Pi8kZdokmSVR/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/peine.json',
-            center: [52.31633, 10.23303],
-            zoom: 15
+            center: [52.3248, 10.2317],
+            zoom: 10
         },
         marburg: {
             airtable_url: 'https://api.airtable.com/v0/appt1VwCeE69OXvSa/',
@@ -101,8 +101,8 @@
             airtable_url: 'https://api.airtable.com/v0/appGrVY6Yhq0RcBPR/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/neuruppin.json',
-            center: [52.94608, 12.82280],
-            zoom: 15
+            center: [52.9185, 12.8007],
+            zoom: 14
         },
         verden: {
             airtable_url: 'https://api.airtable.com/v0/appxsSpCN12iGCIxd/',
