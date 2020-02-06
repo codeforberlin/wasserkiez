@@ -53,7 +53,7 @@
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/erfurt.json',
             center: [50.97807, 11.02874],
-            zoom: 15
+            zoom: 14
         },
         gelsenkirchen: {
             airtable_url: 'https://api.airtable.com/v0/appvWG5FMy9MYxWlM/',
