@@ -67,7 +67,7 @@
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/karlsruhe.json',
             center: [49.014, 8.4043],
-            zoom: 15
+            zoom: 14
         },
         labertal: {
             airtable_url: 'https://api.airtable.com/v0/apprmiLzrLvlOnKmx/',
