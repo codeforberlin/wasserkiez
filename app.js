@@ -111,6 +111,13 @@
             center: [52.92275, 9.23541],
             zoom: 15
         },
+        sylt: {
+            airtable_url: 'https://api.airtable.com/v0/appxsSpCN12iGCIxd/',
+            airtable_key: 'keyl5v0iA9uirvIAH',
+            border: 'border/sylt.json',
+            center: [54.8767139, 8.4898227],
+            zoom: 10
+        },
     }
 
     var icons = {
