@@ -32,7 +32,7 @@
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/herrsching.json',
             center: [47.99846, 11.17039],
-            zoom: 15
+            zoom: 13
         },
         moabit: {
             airtable_url: 'https://api.airtable.com/v0/appTquB8z94iWshhQ/',
