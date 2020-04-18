@@ -1,5 +1,7 @@
 (function () {
     var map, data, markers = [];
+    var currentHoodLayer;
+    var hoodsLayer;
 
     var opt = {
         map: {
@@ -135,32 +137,29 @@
     };
 
     function addAllHoods(){
-        Object.entries(hoods).forEach(([key ,value]) => {
-            L.marker(value.center)
+        var hoodname = location.hash.replace('#', '');
+        hoodsLayer.clearLayers();
+
+        Object
+          .entries(hoods)
+          .filter(([key, _]) => key !== hoodname)
+          .forEach(([key ,value]) => {
+            L.marker(value.center, {icon: icons.Testimonial})
              .bindPopup(`<a href='#${key}'> Nach ${key} wechseln </a>`)
-             .addTo(map);
+             .addTo(hoodsLayer);
         });
     }
 
-    function init() {
+    function renderHood() {
         var hoodname = location.hash.replace('#', '');
         var hood = hoods[hoodname] || hoods['berlin'];
-
 
         var templates = {
             'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
             'Testimonial': Handlebars.compile(document.getElementById('testimonial-template').innerHTML),
             'Test': Handlebars.compile(document.getElementById('test-template').innerHTML)
-        }
-
-        map = L.map('map', {
-            zoomControl: true
-        });
-
-        L.tileLayer(opt.map.url, opt.map.options).addTo(map);
-        map.setView(hood.center, hood.zoom);
-
-        addAllHoods();
+        };
+        currentHoodLayer.clearLayers();
 
         fetchBorders(hood).then(function(response) {
             L.geoJSON(response, {
@@ -170,11 +169,10 @@
                     'opacity': .75,
                     'fill': null
                 }
-            }).addTo(map);
+            }).addTo(currentHoodLayer);
         });
 
         ['Refill', 'Testimonial', 'Test'].forEach(function(category) {
-
             fetchPoints(hood, category).then(function(response) {
                 L.geoJSON(toGeojson(response), {
                     pointToLayer: function(feature, latlng) {
@@ -187,10 +185,21 @@
                         marker.bindPopup(popup);
                         return marker
                     }
-                }).addTo(map);
+                }).addTo(currentHoodLayer);
             });
-
         });
+
+        map.setView(hood.center, hood.zoom);
+    }
+
+    function init() {
+        map = L.map('map', {
+            zoomControl: true
+        });
+        currentHoodLayer = L.layerGroup().addTo(map);
+        hoodsLayer = L.layerGroup().addTo(map);
+
+        L.tileLayer(opt.map.url, opt.map.options).addTo(map);
     }
 
     function fetchBorders(hood) {
@@ -273,8 +282,16 @@
         return geojson;
     }
 
+    window.addEventListener("hashchange", function(event) {
+        renderHood();
+        addAllHoods();
+        renderHood();
+    });
+
     document.addEventListener("DOMContentLoaded", function(event) {
         init();
+        addAllHoods();
+        renderHood();
     });
 
 })();
