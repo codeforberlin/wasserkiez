@@ -90,10 +90,10 @@
             center: [50.814666650503554, 8.773441314697266,],
             zoom: 15
         },
-        muehlheim: {
+        muelheim: {
             airtable_url: 'https://api.airtable.com/v0/appXkv0JETUNqN0Mf/',
             airtable_key: 'keyl5v0iA9uirvIAH',
-            border: 'border/muehlheim.json',
+            border: 'border/muelheim.json',
             center: [51.446625415999826, 6.853923797607422],
             zoom: 14
         },
