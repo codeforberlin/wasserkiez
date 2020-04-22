@@ -104,13 +104,6 @@
             center: [52.9185, 12.8007],
             zoom: 14
         },
-        verden: {
-            airtable_url: 'https://api.airtable.com/v0/appxsSpCN12iGCIxd/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
-            border: 'border/verden.json',
-            center: [52.92275, 9.23541],
-            zoom: 15
-        },
         sylt: {
             airtable_url: 'https://api.airtable.com/v0/appxsSpCN12iGCIxd/',
             airtable_key: 'keyl5v0iA9uirvIAH',
