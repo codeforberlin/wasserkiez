@@ -133,6 +133,12 @@
             iconSize: [34, 40],
             iconAnchor: [27, 38],    // 0,0 is the top left corner
             popupAnchor: [-12, -40], // as seen from iconAnchor
+        }),
+        'Location': new L.Icon({
+            iconUrl: 'img/location.png',
+            iconSize: [70, 70],
+            iconAnchor: [35, 35],    // 0,0 is the top left corner
+            popupAnchor: [0, -20], // as seen from iconAnchor
         })
     };
 
@@ -144,7 +150,7 @@
           .entries(hoods)
           .filter(([key, _]) => key !== hoodname)
           .forEach(([key ,value]) => {
-            L.marker(value.center, {icon: icons.Testimonial})
+            L.marker(value.center, {icon: icons.Location})
              .bindPopup(`<a href='#${key}'> Nach ${key} wechseln </a>`)
              .addTo(hoodsLayer);
         });
