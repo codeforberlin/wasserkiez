@@ -116,8 +116,8 @@
     var icons = {
         'Refill': new L.Icon({
             iconUrl: 'img/refill.png',
-            iconSize: [25, 48],
-            iconAnchor: [13, 46],    // 0,0 is the top left corner
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],    // 0,0 is the top left corner
             popupAnchor: [0, -50],   // as seen from iconAnchor
         }),
         'Testimonial': new L.Icon({
