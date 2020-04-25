@@ -36,6 +36,17 @@
             </div>
         </script>
 
+        <script id="aktion-template" type="text/x-handlebars-template">
+            <h4>{{ Name }}</h4>
+            <div class="body">
+                <div class="img-wrapper img-testimonial">
+                    <img src="{{ Bild.0.url }}" />
+                </div>
+                <div>{{ Beschreibung }}</div>
+                <div><a href="{{Link}}">{{ Link }}</a></div>
+            </div>
+        </script>
+
         <script id="test-template" type="text/x-handlebars-template">
             <h4>{{ Name }}</h4>
             <div class="body">

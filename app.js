@@ -131,6 +131,12 @@
             iconSize: [34, 40],
             iconAnchor: [27, 38],    // 0,0 is the top left corner
             popupAnchor: [-12, -40], // as seen from iconAnchor
+        }),
+        'Aktion': new L.Icon({
+            iconUrl: 'img/aktion.png',
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],    // 0,0 is the top left corner
+            popupAnchor: [0, -50], // as seen from iconAnchor
         })
     };
 
@@ -142,7 +148,8 @@
         var templates = {
             'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
             'Testimonial': Handlebars.compile(document.getElementById('testimonial-template').innerHTML),
-            'Test': Handlebars.compile(document.getElementById('test-template').innerHTML)
+            'Test': Handlebars.compile(document.getElementById('test-template').innerHTML),
+            'Aktion': Handlebars.compile(document.getElementById('aktion-template').innerHTML)
         }
 
         map = L.map('map', {
@@ -163,7 +170,7 @@
             }).addTo(map);
         });
 
-        ['Refill', 'Testimonial', 'Test'].forEach(function(category) {
+        ['Refill', 'Testimonial', 'Test', 'Aktion'].forEach(function(category) {
 
             fetchPoints(hood, category).then(function(response) {
                 L.geoJSON(toGeojson(response), {
