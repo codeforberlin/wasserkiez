@@ -1,14 +1,18 @@
 (function () {
     var map, data, markers = [];
+    var currentHoodLayer;
+    var hoodsLayer;
 
     var opt = {
         map: {
             url: 'https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
             options: {
                 'attribution': 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> | contributors <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a> | Tiles © <a href="http://cartodb.com/attributions">CartoDB</a>',
-                'minZoom': 10,
+                'minZoom': 4,
                 'maxZoom': 18
-            }
+            },
+            center: [51.163375, 10.447683],
+            zoom: 6
         },
         icon: {
             shadowUrl: 'img/marker-shadow.png',
@@ -21,6 +25,7 @@
 
     var hoods = {
         berlin: {
+            title: 'Berlin',
             airtable_url: 'https://api.airtable.com/v0/appM01mYlIJUkU1Od/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/berlin.json',
@@ -28,6 +33,7 @@
             zoom: 15
         },
         herrsching: {
+            title: 'Herrsching',
             airtable_url: 'https://api.airtable.com/v0/appjvYr3or0V0F44E/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/herrsching.json',
@@ -35,6 +41,7 @@
             zoom: 13
         },
         moabit: {
+            title: 'Moabit',
             airtable_url: 'https://api.airtable.com/v0/appTquB8z94iWshhQ/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/moabit.json',
@@ -42,6 +49,7 @@
             zoom: 14
         },
         chemnitz: {
+            title: 'Chemnitz',
             airtable_url: 'https://api.airtable.com/v0/appsCp3RA4MFKtth3/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/chemnitz.json',
@@ -49,6 +57,7 @@
             zoom: 14
         },
         erfurt: {
+            title: 'Erfurt',
             airtable_url: 'https://api.airtable.com/v0/appeNrxLHEvyx8anc/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/erfurt.json',
@@ -56,6 +65,7 @@
             zoom: 14
         },
         gelsenkirchen: {
+            title: 'Gelsenkirchen',
             airtable_url: 'https://api.airtable.com/v0/appvWG5FMy9MYxWlM/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/gelsenkirchen.json',
@@ -63,6 +73,7 @@
             zoom: 14
         },
         karlsruhe: {
+            title: 'Karlsruhe',
             airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/karlsruhe.json',
@@ -70,6 +81,7 @@
             zoom: 14
         },
         labertal: {
+            title: 'Labertal',
             airtable_url: 'https://api.airtable.com/v0/apprmiLzrLvlOnKmx/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/labertal.json',
@@ -77,6 +89,7 @@
             zoom: 11
         },
         peine: {
+            title: 'Peine',
             airtable_url: 'https://api.airtable.com/v0/app14Pi8kZdokmSVR/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/peine.json',
@@ -84,6 +97,7 @@
             zoom: 10
         },
         marburg: {
+            title: 'Marburg',
             airtable_url: 'https://api.airtable.com/v0/appt1VwCeE69OXvSa/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/marburg.json',
@@ -91,6 +105,7 @@
             zoom: 15
         },
         muelheim: {
+            title: 'Mülheim',
             airtable_url: 'https://api.airtable.com/v0/appXkv0JETUNqN0Mf/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/muelheim.json',
@@ -98,6 +113,7 @@
             zoom: 14
         },
         neuruppin: {
+            title: 'Neuruppin',
             airtable_url: 'https://api.airtable.com/v0/appGrVY6Yhq0RcBPR/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/neuruppin.json',
@@ -105,6 +121,7 @@
             zoom: 14
         },
         sylt: {
+            title: 'Sylt',
             airtable_url: 'https://api.airtable.com/v0/appxsSpCN12iGCIxd/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/sylt.json',
@@ -132,6 +149,12 @@
             iconAnchor: [27, 38],    // 0,0 is the top left corner
             popupAnchor: [-12, -40], // as seen from iconAnchor
         }),
+        'Location': new L.Icon({
+            iconUrl: 'img/location.png',
+            iconSize: [70, 70],
+            iconAnchor: [35, 35],    // 0,0 is the top left corner
+            popupAnchor: [0, -20], // as seen from iconAnchor
+        }),
         'Aktion': new L.Icon({
             iconUrl: 'img/aktion.png',
             iconSize: [50, 50],
@@ -140,54 +163,73 @@
         })
     };
 
-    function init() {
+    function addAllHoods(){
         var hoodname = location.hash.replace('#', '');
-        var hood = hoods[hoodname] || hoods['berlin'];
+        hoodsLayer.clearLayers();
 
+        Object
+          .entries(hoods)
+          .filter(([key, _]) => key !== hoodname)
+          .forEach(([key ,value]) => {
+            L.marker(value.center, {icon: icons.Location})
+             .bindPopup(`<a href='#${key}'> Nach ${value.title} wechseln </a>`)
+             .addTo(hoodsLayer);
+          })
+    }
 
-        var templates = {
-            'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
-            'Testimonial': Handlebars.compile(document.getElementById('testimonial-template').innerHTML),
-            'Test': Handlebars.compile(document.getElementById('test-template').innerHTML),
-            'Aktion': Handlebars.compile(document.getElementById('aktion-template').innerHTML)
+    function renderHood() {
+        var hoodname = location.hash.replace('#', '');
+        var hood = hoods[hoodname];
+
+        if (typeof hood !== 'undefined') {
+            var templates = {
+                'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
+                'Testimonial': Handlebars.compile(document.getElementById('testimonial-template').innerHTML),
+                'Test': Handlebars.compile(document.getElementById('test-template').innerHTML)
+            };
+            currentHoodLayer.clearLayers();
+
+            fetchBorders(hood).then(function(response) {
+                L.geoJSON(response, {
+                    style: {
+                        'color': "#009fe3",
+                        'weight': 12,
+                        'opacity': .75,
+                        'fill': null
+                    }
+                }).addTo(currentHoodLayer);
+            });
+
+            ['Refill', 'Testimonial', 'Test', 'Aktion'].forEach(function(category) {
+                fetchPoints(hood, category).then(function(response) {
+                    L.geoJSON(toGeojson(response), {
+                        pointToLayer: function(feature, latlng) {
+                            var percentages = collectPercentages(feature.properties);
+                            var properties = Object.assign(feature.properties, percentages);
+
+                            var popup = templates[category](properties);
+
+                            marker = L.marker(latlng, {icon: icons[category]});
+                            marker.bindPopup(popup);
+                            return marker
+                        }
+                    }).addTo(currentHoodLayer);
+                });
+            });
+
+            map.setView(hood.center, hood.zoom);
         }
+    }
 
+    function init() {
         map = L.map('map', {
             zoomControl: true
         });
+        currentHoodLayer = L.layerGroup().addTo(map);
+        hoodsLayer = L.layerGroup().addTo(map);
 
         L.tileLayer(opt.map.url, opt.map.options).addTo(map);
-        map.setView(hood.center, hood.zoom);
-
-        fetchBorders(hood).then(function(response) {
-            L.geoJSON(response, {
-                style: {
-                    'color': "#009fe3",
-                    'weight': 12,
-                    'opacity': .75,
-                    'fill': null
-                }
-            }).addTo(map);
-        });
-
-        ['Refill', 'Testimonial', 'Test', 'Aktion'].forEach(function(category) {
-
-            fetchPoints(hood, category).then(function(response) {
-                L.geoJSON(toGeojson(response), {
-                    pointToLayer: function(feature, latlng) {
-                        var percentages = collectPercentages(feature.properties);
-                        var properties = Object.assign(feature.properties, percentages);
-
-                        var popup = templates[category](properties);
-
-                        marker = L.marker(latlng, {icon: icons[category]});
-                        marker.bindPopup(popup);
-                        return marker
-                    }
-                }).addTo(map);
-            });
-
-        });
+        map.setView(opt.map.center, opt.map.zoom);
     }
 
     function fetchBorders(hood) {
@@ -270,8 +312,15 @@
         return geojson;
     }
 
+    window.addEventListener("hashchange", function(event) {
+        addAllHoods();
+        renderHood();
+    });
+
     document.addEventListener("DOMContentLoaded", function(event) {
         init();
+        addAllHoods();
+        renderHood();
     });
 
 })();
