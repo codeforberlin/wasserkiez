@@ -105,7 +105,7 @@
             zoom: 15
         },
         muelheim: {
-            title: 'Mühlheim',
+            title: 'Mülheim'
             airtable_url: 'https://api.airtable.com/v0/appXkv0JETUNqN0Mf/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/muelheim.json',
