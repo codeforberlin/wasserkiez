@@ -105,7 +105,7 @@
             zoom: 15
         },
         muelheim: {
-            title: 'Mülheim'
+            title: 'Mülheim',
             airtable_url: 'https://api.airtable.com/v0/appXkv0JETUNqN0Mf/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/muelheim.json',
@@ -133,8 +133,8 @@
     var icons = {
         'Refill': new L.Icon({
             iconUrl: 'img/refill.png',
-            iconSize: [25, 48],
-            iconAnchor: [13, 46],    // 0,0 is the top left corner
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],    // 0,0 is the top left corner
             popupAnchor: [0, -50],   // as seen from iconAnchor
         }),
         'Testimonial': new L.Icon({
@@ -154,6 +154,12 @@
             iconSize: [70, 70],
             iconAnchor: [35, 35],    // 0,0 is the top left corner
             popupAnchor: [0, -20], // as seen from iconAnchor
+        }),
+        'Aktion': new L.Icon({
+            iconUrl: 'img/aktion.png',
+            iconSize: [50, 50],
+            iconAnchor: [25, 50],    // 0,0 is the top left corner
+            popupAnchor: [0, -50], // as seen from iconAnchor
         })
     };
 
@@ -168,7 +174,7 @@
             L.marker(value.center, {icon: icons.Location})
              .bindPopup(`<a href='#${key}'> Nach ${value.title} wechseln </a>`)
              .addTo(hoodsLayer);
-        });
+          })
     }
 
     function renderHood() {
@@ -194,7 +200,7 @@
                 }).addTo(currentHoodLayer);
             });
 
-            ['Refill', 'Testimonial', 'Test'].forEach(function(category) {
+            ['Refill', 'Testimonial', 'Test', 'Aktion'].forEach(function(category) {
                 fetchPoints(hood, category).then(function(response) {
                     L.geoJSON(toGeojson(response), {
                         pointToLayer: function(feature, latlng) {
