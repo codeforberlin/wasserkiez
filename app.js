@@ -25,7 +25,7 @@
 
     var hoods = {
         berlin: {
-            title: 'Berlin',
+            title: 'Kreuzberg',
             airtable_url: 'https://api.airtable.com/v0/appM01mYlIJUkU1Od/',
             airtable_key: 'keyl5v0iA9uirvIAH',
             border: 'border/berlin.json',
