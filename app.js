@@ -185,7 +185,8 @@
             var templates = {
                 'Refill': Handlebars.compile(document.getElementById('refill-template').innerHTML),
                 'Testimonial': Handlebars.compile(document.getElementById('testimonial-template').innerHTML),
-                'Test': Handlebars.compile(document.getElementById('test-template').innerHTML)
+                'Test': Handlebars.compile(document.getElementById('test-template').innerHTML),
+                'Aktion': Handlebars.compile(document.getElementById('aktion-template').innerHTML)
             };
             currentHoodLayer.clearLayers();
 
