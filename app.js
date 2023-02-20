@@ -27,7 +27,7 @@
         berlin: {
             title: 'Kreuzberg',
             airtable_url: 'https://api.airtable.com/v0/appM01mYlIJUkU1Od/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/berlin.json',
             center: [52.5036411,13.4265875],
             zoom: 15
@@ -35,7 +35,7 @@
         herrsching: {
             title: 'Herrsching',
             airtable_url: 'https://api.airtable.com/v0/appjvYr3or0V0F44E/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/herrsching.json',
             center: [47.99846, 11.17039],
             zoom: 13
@@ -43,7 +43,7 @@
         moabit: {
             title: 'Moabit',
             airtable_url: 'https://api.airtable.com/v0/appTquB8z94iWshhQ/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/moabit.json',
             center: [52.52885898000442, 13.34341049194336],
             zoom: 14
@@ -51,7 +51,7 @@
         chemnitz: {
             title: 'Chemnitz',
             airtable_url: 'https://api.airtable.com/v0/appsCp3RA4MFKtth3/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/chemnitz.json',
             center: [50.8400, 12.9188],
             zoom: 14
@@ -59,7 +59,7 @@
         erfurt: {
             title: 'Erfurt',
             airtable_url: 'https://api.airtable.com/v0/appeNrxLHEvyx8anc/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/erfurt.json',
             center: [50.97807, 11.02874],
             zoom: 14
@@ -67,7 +67,7 @@
         gelsenkirchen: {
             title: 'Gelsenkirchen',
             airtable_url: 'https://api.airtable.com/v0/appvWG5FMy9MYxWlM/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/gelsenkirchen.json',
             center: [51.5010, 7.1147],
             zoom: 14
@@ -75,7 +75,7 @@
         karlsruhe: {
             title: 'Karlsruhe',
             airtable_url: 'https://api.airtable.com/v0/appeRgJE4P5RZJNNu/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/karlsruhe.json',
             center: [49.014, 8.4043],
             zoom: 14
@@ -83,7 +83,7 @@
         labertal: {
             title: 'Labertal',
             airtable_url: 'https://api.airtable.com/v0/apprmiLzrLvlOnKmx/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/labertal.json',
             center: [48.72033, 12.04024],
             zoom: 11
@@ -91,7 +91,7 @@
         peine: {
             title: 'Peine',
             airtable_url: 'https://api.airtable.com/v0/app14Pi8kZdokmSVR/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/peine.json',
             center: [52.3248, 10.2317],
             zoom: 10
@@ -99,7 +99,7 @@
         marburg: {
             title: 'Marburg',
             airtable_url: 'https://api.airtable.com/v0/appt1VwCeE69OXvSa/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/marburg.json',
             center: [50.814666650503554, 8.773441314697266,],
             zoom: 15
@@ -107,7 +107,7 @@
         muelheim: {
             title: 'Mülheim',
             airtable_url: 'https://api.airtable.com/v0/appXkv0JETUNqN0Mf/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/muelheim.json',
             center: [51.446625415999826, 6.853923797607422],
             zoom: 14
@@ -115,7 +115,7 @@
         neuruppin: {
             title: 'Neuruppin',
             airtable_url: 'https://api.airtable.com/v0/appGrVY6Yhq0RcBPR/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/neuruppin.json',
             center: [52.9185, 12.8007],
             zoom: 14
@@ -123,7 +123,7 @@
         sylt: {
             title: 'Sylt',
             airtable_url: 'https://api.airtable.com/v0/appxsSpCN12iGCIxd/',
-            airtable_key: 'keyl5v0iA9uirvIAH',
+            airtable_key: 'patIxjFQ1hHfONCze.332c8fc7a14504bef1f88002cfb15d4400a25ffe2d2036ef043ebdbd7b431142',
             border: 'border/sylt.json',
             center: [54.8767139, 8.4898227],
             zoom: 10
